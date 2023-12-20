@@ -38,6 +38,9 @@ const eventSchema = mongoose.Schema({
         type: mongoose.Schema.Types.ObjectId,
         ref: userModel,
         required: [true, "event owner is required"]
+    },
+    location: {
+        type: String
     }
 }, {
     timestamp: true
