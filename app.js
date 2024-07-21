@@ -10,11 +10,19 @@ app.use(bodyParser.json());
 
 
 
+
+
+
 app.use(cors({
     origin: "*",
     methods: ["GET", "POST", "PATCH", "PUT", "DELETE"],
 }));
 
+app.get("/health" , (req , resp) => {
+    resp.status(200).json({
+        message : "Server is Running"
+    });
+});
 
 app.use(router)
 
